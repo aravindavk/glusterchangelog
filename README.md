@@ -1,8 +1,13 @@
 gchangelogparser
 ================
 
-GlusterFS Changelogs parser in Rust
+GlusterFS Changelogs parser in [Rust](http://rust-lang.org/).
 
+## Installation
+
+Download the binary file from [here](https://github.com/aravindavk/gchangelogparser/releases/tag/v0.0.1) and copy to `/usr/local/bin` or any other directory which is available in PATH.
+
+Or you can clone the github repo and compile it in your system.
 
     git clone https://github.com/aravindavk/gchangelogparser.git
     cd gchangelogparser
