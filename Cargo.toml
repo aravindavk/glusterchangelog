@@ -1,0 +1,5 @@
+[package]
+
+name = "gchangelogparser"
+version = "0.0.1"
+authors = ["Aravinda VK <mail@aravindavk.in>"]
