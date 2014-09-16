@@ -56,3 +56,8 @@ To run
 To see the events happened for particular GFID(GlusterFS ID for each file/dir),
 
     ./all_changes.sh /bricks/brick1/.glusterfs/changelogs/ | grep " 7db2b971-7516-40bb-b069-90c875960b0a "
+
+
+## License
+
+The MIT License (MIT). See LICENSE file for more details.
