@@ -3,6 +3,20 @@ gchangelogparser
 
 GlusterFS Changelogs parser in [Rust](http://rust-lang.org/).
 
+## Why?
+
+Converts this
+
+    GlusterFS Changelog | version: v1.1 | encoding : 2
+    E0b99ef11-4b79-4cd0-9730-b5a0e8c4a8c0^@4^@16877^@0^@0^@00000000-0000-0000-0000-000000000001/dir1^@Ec5250af6-720e-4bfe-b938-827614304f39^@23^@33188^@0^@0^@0b99ef11-4b79-4cd0-9730-b5a0e8c4a8c0/hello.txt^@Dc5250af6-720e-4bfe-b938-827614304f39^@Dc5250af6-720e-4bfe-b938-827614304f39^@
+
+to human readable :)
+
+    E 0b99ef11-4b79-4cd0-9730-b5a0e8c4a8c0 MKDIR 16877 0 0 00000000-0000-0000-0000-000000000001/dir1
+    E c5250af6-720e-4bfe-b938-827614304f39 CREATE 33188 0 0 0b99ef11-4b79-4cd0-9730-b5a0e8c4a8c0/hello.txt
+    D c5250af6-720e-4bfe-b938-827614304f39
+    D c5250af6-720e-4bfe-b938-827614304f39
+
 ## Installation
 
 Download the binary file from [here](https://github.com/aravindavk/gchangelogparser/releases/tag/v0.0.1) and copy to `/usr/local/bin` or any other directory which is available in PATH.

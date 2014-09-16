@@ -7,6 +7,7 @@ static BUFFER_SIZE: uint = 100;
 #[allow(non_camel_case_types)]
 #[deriving(PartialEq, FromPrimitive, Show)]
 enum Foptypes{
+    GF_FOP_NULL=0,
     GF_FOP_MKNOD=3,
     GF_FOP_MKDIR=4,
     GF_FOP_UNLINK=5,
@@ -23,6 +24,7 @@ enum Foptypes{
 impl Foptypes{
     fn get(&self) -> &str{
         match *self{
+            GF_FOP_NULL => "NULL",
             GF_FOP_MKNOD => "MKNOD",
             GF_FOP_MKDIR => "MKDIR",
             GF_FOP_UNLINK => "UNLINK",
@@ -39,6 +41,7 @@ impl Foptypes{
 
     fn num_fields(&self) -> uint{
         match *self{
+            GF_FOP_NULL => 3,
             GF_FOP_MKNOD => 7,
             GF_FOP_MKDIR => 7,
             GF_FOP_UNLINK => 4,
@@ -90,8 +93,7 @@ impl Parser{
 
     fn process_record(&self){
         let mut op: String = String::new();
-        let mut i: int = 0;
-        for v in self.tokens.iter(){
+        for (i, v) in self.tokens.iter().enumerate(){
             if (self.fop_type == 'E' || self.fop_type == 'M') && i == 2 {
                 let ty: Option<Foptypes> = self.get_fop_enum(v.clone());
                 match ty{
@@ -106,7 +108,6 @@ impl Parser{
                 op.push_str(v.as_slice());
                 op.push_str(" ");
             }
-            i += 1;
         }
         println!("{}", op.as_slice().trim_chars(' '));
     }
