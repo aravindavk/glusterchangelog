@@ -120,7 +120,7 @@ impl Parser{
 
         let mut num_tokens: uint = self.get_num_tokens();
         if (self.fop_type == 'E' || self.fop_type == 'M') && self.tokens.len() >= 3{
-            let ty: Option<Foptypes> = self.get_fop_enum(self.tokens.get(2).clone());
+            let ty: Option<Foptypes> = self.get_fop_enum(self.tokens[2].clone());
             num_tokens = match ty{
                 Some(aa) => aa.num_fields(),
                 None => 0
@@ -135,7 +135,7 @@ impl Parser{
     }
 
     fn parse_chunk(&mut self, chunk: &str){
-        for (_, c) in chunk.chars().enumerate(){
+        for c in chunk.chars(){
             if self.record_complete && (c == 'E' || c == 'M' || c == 'D'){
                 self.fop_type = c;
                 self.tokens.push(String::from_char(1, c));
@@ -175,7 +175,7 @@ fn main() {
     let reader = stdin();
     if reader.get_ref().isatty(){
         let args = os::args();
-        let file = File::open(&Path::new(args.get(1).clone()));
+        let file = File::open(&Path::new(args[1].clone()));
         let reader_file = BufferedReader::new(file);
         parser.parse(reader_file);
     }
