@@ -1,4 +1,4 @@
-use std::io::{BufferedReader, File, stdin};
+use std::io::{BufferedReader, File, stdin, EndOfFile};
 use std::num::FromPrimitive;
 use std::os;
 
@@ -160,8 +160,11 @@ impl Parser{
         loop{
             match reader.read(buf) {
                 Ok(nread) => self.parse_chunk(std::str::from_utf8(buf.slice(0, nread)).unwrap()),
-                Err(_e) => {
-                    break;
+                Err(e) => match e.kind{
+                    EndOfFile => break,
+                    _ => {
+                        fail!("ERROR: {}", e);
+                    }
                 }
             }
         }
