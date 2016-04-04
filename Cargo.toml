@@ -1,5 +1,12 @@
 [package]
 
-name = "gchangelogparser"
-version = "0.0.1"
+name = "glusterchangelog"
+version = "0.1.2"
 authors = ["Aravinda VK <mail@aravindavk.in>"]
+
+[lib]
+name = "glusterchangelog"
+crate-type = ["rlib"]
+
+[[bin]]
+name = "glusterchangelogparser"
