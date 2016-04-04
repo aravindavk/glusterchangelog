@@ -1,6 +1,8 @@
 glusterchangelog
 ================
 
+[![Build Status](https://travis-ci.org/aravindavk/glusterchangelog.svg?branch=master)](https://travis-ci.org/aravindavk/glusterchangelog)
+
 GlusterFS Changelogs parser written using [Rust](http://rust-lang.org/).
 
 ## Why?
