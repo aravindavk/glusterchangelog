@@ -3,7 +3,7 @@
 name = "glusterchangelog"
 version = "0.1.2"
 authors = ["Aravinda VK <mail@aravindavk.in>"]
-description = "A lib and tool to parser Gluster Changelogs"
+description = "A lib and tool to parse Gluster Changelogs"
 documentation = "https://github.com/aravindavk/glusterchangelog/blob/master/README.md"
 homepage = "https://github.com/aravindavk/glusterchangelog"
 repository = "https://github.com/aravindavk/glusterchangelog"

@@ -29,13 +29,10 @@ to human readable format :)
 
 Clone the github repo and compile it in your system.
 
-    git clone https://github.com/aravindavk/glusterchangelog.git
-    cd glusterchangelog
-    cargo build --release
+    cargo install glusterchangelog
 
-Then copy the binary `glusterchangelogparser` created in `target/release`
-directory to `/usr/local/bin`(or any other dir which is available in env
-var PATH)
+Be sure to add `$HOME/.cargo/bin` to your PATH to be able to run the
+installed binaries.
 
 ## Using it as a Tool
 
